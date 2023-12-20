@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const container = document.getElementById("container");
 const colors = [
   "red",
@@ -37,3 +38,44 @@ function removeColor(element) {
 function getRandomColor() {
   return colors[Math.floor(Math.random() * colors.length)];
 }
+=======
+const container = document.getElementById("container");
+const colors = [
+  "red",
+  "blue",
+  "green",
+  "yellow",
+  "orange",
+  "gold",
+  "purple",
+  "silver",
+  "white",
+  "pink",
+  "violet",
+];
+const squares = 400;
+
+for (let i = 0; i < squares; i++) {
+  const square = document.createElement("div");
+  square.classList.add("square");
+
+  square.addEventListener("mouseover", () => setColor(square));
+  square.addEventListener("mouseout", () => removeColor(square));
+
+  container.appendChild(square);
+}
+
+function setColor(element) {
+  const color = getRandomColor();
+  element.style.backgroundColor = color;
+  element.style.boxShadow = `0 0 1px ${color}`;
+}
+function removeColor(element) {
+  element.style.backgroundColor = "#1d1d1d";
+  element.style.boxShadow = `0 0 2px #000`;
+}
+
+function getRandomColor() {
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+>>>>>>> e2943c6f1bdd27452584e455269382378ff9a8b3
